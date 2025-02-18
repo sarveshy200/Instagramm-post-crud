@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Post</title>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add New Post</h2>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="postimage">Post Image:</label>
+            <input type="file" id="postimage" name="postimage" accept="image/*" required>
+
+            <label for="content">Caption:</label>
+            <textarea id="content" name="content" rows="3" placeholder="Write your caption..." required></textarea>
+
+            <button type="submit">Post</button>
+        </form>
+    </div>
+</body>
+</html>

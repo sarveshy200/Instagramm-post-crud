@@ -1,0 +1,149 @@
+/* Reset styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+}
+
+/* Container for posts */
+.container {
+    display: flex;
+    flex-direction: row; /* Aligns posts in a row */
+    flex-wrap: wrap; /* Allows wrapping when needed */
+    gap: 20px; /* Space between posts */
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Style for the post */
+.post {
+    width: 400px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    padding: 16px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+/* Post Image */
+.post-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+/* Likes, Caption, Comments */
+.likes, .caption, .time {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.likes {
+    font-weight: bold;
+}
+
+/* Timestamp */
+.time {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Add New Post Link */
+.add-post-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.add-post-button {
+    display: inline-block;
+    background-color: #0095f6;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.add-post-button:hover {
+    background-color: #007acc;
+}
+
+
+/* Post Actions */
+.post a {
+    display: inline-block;
+    background-color: #1d9bf0;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-right: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.post a:hover {
+    background-color: #007acc;
+}
+
+/* Delete Button */
+.post form {
+    display: inline-block;
+}
+
+.post button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.post button:hover {
+    background-color: #cc0000;
+}
+
+
+/* Main Header */
+.main-header {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 16px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
