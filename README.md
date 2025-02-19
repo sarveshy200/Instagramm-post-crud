@@ -13,9 +13,7 @@ Check out the deployed version of the project:
 ## 🛠️ Technologies Used
 - Node.js
 - Express.js
-- MongoDB (Mongoose ORM)
 - EJS (for rendering views)
-- Bootstrap (for styling)
 
 ## 📥 Installation & Setup
 
