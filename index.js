@@ -1,5 +1,4 @@
 const express = require("express");
-import { SpeedInsights } from "@vercel/speed-insights/next"
 const { v4: uuidv4 } = require('uuid');
 const multer = require('multer');
 const path = require("path");
