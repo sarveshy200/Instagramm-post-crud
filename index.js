@@ -1,52 +1,54 @@
 const express = require("express");
+const { v4: uuidv4 } = require('uuid');
 const multer = require('multer');
 const path = require("path");
 const app = express();
 const port = process.env.PORT || 8080;
-var methodOverride = require('method-override');
+
+var methodOverride = require('method-override')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/assets/uploads'); 
     },
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname)); 
+        cb(null, uuidv4() + path.extname(file.originalname)); 
     }
 });
 
+
 const upload = multer({ storage: storage });
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method'))
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-let postIdCounter = 1; // Initialize a counter for custom IDs
 let posts = [
     {
-        id: postIdCounter++,
+        id: uuidv4(),
         username: "sarveshy200",
         postimage: "/assets/uploads/sarvesh.jpg",
         content: "Loving this coding project! 🚀 #CodingLife #HTML #CSS #MERN"
     },
     {
-        id: postIdCounter++,
+        id: uuidv4(),
         username: "amaan2000",
         postimage: "/assets/uploads/amaan.JPG",
         content: "Loving this front end! 🚀 #CodingLife #HTML #CSS #React"
     },
     {
-        id: postIdCounter++,
+        id: uuidv4(),
         username: "satyacheetah123",
         postimage: "/assets/uploads/satya.JPG",
         content: "Loving this devops project! 🚀 #CodingLife #Devops"
     },
     {
-        id: postIdCounter++,
+        id: uuidv4(),
         username: "amitabh",
         postimage: "/assets/uploads/amitabh.jpg",
-        content: "Loving this banking works! 🚀 #Banking #loan #credit"
+        content: "Loving this banking works! 🚀 #Banking #loa #credit"
     }
 ];
 
@@ -61,38 +63,41 @@ app.get("/add-post", (req, res) => {
 app.post('/', upload.single('postimage'), (req, res) => {
     const { username, content } = req.body;
     const postimage = `/assets/uploads/${req.file.filename}`; 
-    const id = postIdCounter++; // Assign a unique ID using the counter
+    const id = uuidv4();
     posts.push({ id, username, postimage, content });
     res.redirect("/");
 });
 
-app.get("/show/:id", (req, res) => {
-    let { id } = req.params;
-    let post = posts.find((p) => parseInt(id) === p.id);
-    res.render("show.ejs", { post });
+app.get("/show/:id", (req, res)=>{
+   let { id } = req.params;
+   let post = posts.find((p) => id === p.id);
+   res.render("show.ejs", {post});
+
 });
 
-app.patch("/:id", (req, res) => {
+
+app.patch("/:id", (req, res)=>{
     let { id } = req.params;
     let newContent = req.body.content;
-    let post = posts.find((p) => parseInt(id) === p.id);
-    if (post) {
-        post.content = newContent;
-    }
+    let post = posts.find((p) => id === p.id);
+    post.content = newContent;
     res.redirect("/");
 });
 
-app.get("/:id/edit", (req, res) => {
+app.get("/:id/edit", (req, res)=>{
     let { id } = req.params;
-    let post = posts.find((p) => parseInt(id) === p.id);
-    res.render("edit.ejs", { post });
+    let post = posts.find((p) => id === p.id);
+    res.render("edit.ejs", {post});
 });
 
-app.delete("/:id", (req, res) => {
+app.delete("/:id", (req, res)=>{
     let { id } = req.params;
-    posts = posts.filter((p) => parseInt(id) !== p.id);
-    res.redirect("/");
+    posts = posts.filter((p) => id !== p.id);
+    res.redirect("/")
 });
+
+
+
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
