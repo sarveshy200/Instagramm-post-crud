@@ -147,3 +147,88 @@ body, html {
     font-size: 24px;
     font-weight: bold;
 }
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Adjust container for smaller screens */
+    .container {
+        flex-direction: column; /* Stack posts vertically */
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    /* Adjust post width */
+    .post {
+        width: 90%; /* Make posts take most of the screen width */
+        max-width: 400px; /* Prevent excessive stretching */
+    }
+
+    /* Reduce padding and font sizes for compact layout */
+    .add-post-button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .post a,
+    .post button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Adjust header styles */
+    .header img {
+        width: 35px;
+        height: 35px;
+        margin-right: 8px;
+    }
+
+    .username {
+        font-size: 14px;
+    }
+
+    /* Optimize image display */
+    .post-image {
+        max-height: 350px;
+    }
+
+    /* Reduce text size */
+    .likes, .caption, .time {
+        font-size: 12px;
+    }
+
+    .time {
+        font-size: 10px;
+    }
+
+    /* Reduce margin for better spacing */
+    .add-post-container {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .post {
+        width: 95%; /* Utilize more screen space */
+        padding: 12px;
+    }
+
+    .post a,
+    .post button {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
+
+    .main-header {
+        font-size: 20px;
+        padding: 12px 0;
+    }
+
+    .add-post-button {
+        width: 80%;
+        text-align: center;
+    }
+}
