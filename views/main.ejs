@@ -25,7 +25,7 @@
           <%= post.content %>
         </div>
         <div class="time">2 hours ago</div>
-        <a href="https://instagram-post-crud.vercel.app/Show<%= post.id %>">Show Post</a>
+        <a href="https://instagram-post-crud.vercel.app/show/<%= post.id %>">Show Post</a>
         <a href="https://instagram-post-crud.vercel.app/<%= post.id %>/edit">Edit Post</a>
         <form method="POST" action="/<%= post.id %>?_method=DELETE">
           <button>Delete Post</button>
