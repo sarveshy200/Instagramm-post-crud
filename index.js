@@ -3,7 +3,8 @@ const { v4: uuidv4 } = require('uuid');
 const multer = require('multer');
 const path = require("path");
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080;
+
 var methodOverride = require('method-override')
 
 const storage = multer.diskStorage({
