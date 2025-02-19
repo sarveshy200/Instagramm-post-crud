@@ -35,13 +35,13 @@ let posts = [
     {
         id: uuidv4(),
         username: "amaan2000",
-        postimage: "/assets/uploads/amaan.JPG",
+        postimage: "/assets/uploads/amaan.jpg",
         content: "Loving this front end! 🚀 #CodingLife #HTML #CSS #React"
     },
     {
         id: uuidv4(),
         username: "satyacheetah123",
-        postimage: "/assets/uploads/satya.JPG",
+        postimage: "/assets/uploads/satya.jpg",
         content: "Loving this devops project! 🚀 #CodingLife #Devops"
     },
     {
